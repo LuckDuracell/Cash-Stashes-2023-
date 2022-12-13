@@ -12,6 +12,7 @@ struct Cash_Stashes__2023_App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .colorScheme(.dark)
         }
     }
 }

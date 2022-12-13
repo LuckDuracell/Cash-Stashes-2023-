@@ -14,6 +14,9 @@
 		0A281AF92947B25C004A8D88 /* Cash_Stashes__2023_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281AF82947B25C004A8D88 /* Cash_Stashes__2023_Tests.swift */; };
 		0A281B032947B25C004A8D88 /* Cash_Stashes__2023_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B022947B25C004A8D88 /* Cash_Stashes__2023_UITests.swift */; };
 		0A281B052947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B042947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift */; };
+		0A281B122947B284004A8D88 /* Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B112947B284004A8D88 /* Cash.swift */; };
+		0A281B142947B28D004A8D88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B132947B28D004A8D88 /* Card.swift */; };
+		0A281B162947B295004A8D88 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B152947B295004A8D88 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		0A281AFE2947B25C004A8D88 /* Cash Stashes [2023]UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cash Stashes [2023]UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A281B022947B25C004A8D88 /* Cash_Stashes__2023_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_Stashes__2023_UITests.swift; sourceTree = "<group>"; };
 		0A281B042947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_Stashes__2023_UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A281B112947B284004A8D88 /* Cash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash.swift; sourceTree = "<group>"; };
+		0A281B132947B28D004A8D88 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0A281B152947B295004A8D88 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				0A281AE72947B258004A8D88 /* Cash_Stashes__2023_App.swift */,
 				0A281AE92947B258004A8D88 /* ContentView.swift */,
+				0A281B112947B284004A8D88 /* Cash.swift */,
+				0A281B132947B28D004A8D88 /* Card.swift */,
+				0A281B152947B295004A8D88 /* Stock.swift */,
 				0A281AEB2947B25B004A8D88 /* Assets.xcassets */,
 				0A281AED2947B25B004A8D88 /* Preview Content */,
 			);
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A281AEA2947B258004A8D88 /* ContentView.swift in Sources */,
+				0A281B122947B284004A8D88 /* Cash.swift in Sources */,
 				0A281AE82947B258004A8D88 /* Cash_Stashes__2023_App.swift in Sources */,
+				0A281B162947B295004A8D88 /* Stock.swift in Sources */,
+				0A281B142947B28D004A8D88 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
