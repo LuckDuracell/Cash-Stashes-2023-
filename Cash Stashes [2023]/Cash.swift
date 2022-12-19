@@ -101,6 +101,17 @@ struct Cash: View {
             .onChange(of: cashList, perform: { _ in
                 saveCashlist()
             })
+            .overlay(alignment: .center, content: {
+                HStack(spacing: 0) { Text("Total: "); Text(sumList(cashList), format: .currency(code: currency())) }
+                    .foregroundColor(.white)
+                    .font(.largeTitle.bold())
+                    .padding()
+                    .background(.thinMaterial)
+                    .cornerRadius(15)
+                    .padding()
+                    .disabled(showTotal ? true : false)
+                    .opacity(showTotal ? 1 : 0)
+            })
         }
     }
 }

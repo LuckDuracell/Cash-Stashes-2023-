@@ -19,14 +19,6 @@ struct StashHeader: View {
     
     @Binding var showTotal: Bool
     
-    func sumList() -> Double {
-        var sum: Double = 0
-        for item in list {
-            sum += item.amount
-        }
-        return sum
-    }
-    
     var body: some View {
         HStack {
             Text(text)
@@ -34,11 +26,11 @@ struct StashHeader: View {
                 .foregroundColor(.white)
                 .padding(20)
             Spacer()
-            if sumList() > 0 {
+            if sumList(list) > 0 {
                 Button {
-                    showTotal.toggle()
+                    withAnimation { showTotal.toggle() }
                 } label: {
-                    Text(sumList(), format: .currency(code: currency()))
+                    Text(sumList(list), format: .currency(code: currency()))
                         .foregroundColor(.white)
                         .padding(5)
                         .padding(.horizontal, 8)
@@ -50,6 +42,14 @@ struct StashHeader: View {
         }
         .padding(.top, 40)
     }
+}
+
+func sumList(_ list: [Item]) -> Double {
+    var sum: Double = 0
+    for item in list {
+        sum += item.amount
+    }
+    return sum
 }
 
 func gatherCash() -> [Item] {
@@ -83,13 +83,6 @@ func gatherSavings() -> [Item] {
         }
     }
     return output
-}
-
-struct StashHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        StashHeader(text: "Cash", list: [Item(name: "", amount: 8.53, icon: "")], showTotal: .constant(false))
-            .background(Color("CashColor"))
-    }
 }
 
 
@@ -135,7 +128,7 @@ struct GlowOverlay: ViewModifier {
     }
 }
 
-struct CashIconPicker: View {
+struct IconPicker: View {
     
     @Binding var selected: String
     let icons = ["dollarsign.circle.fill", "creditcard.circle.fill", "bitcoinsign.circle.fill", "chart.pie.fill", "centsign.circle.fill"]
@@ -149,7 +142,7 @@ struct CashIconPicker: View {
                     .frame(width: 35, height: 35)
                     .foregroundColor(color)
             })
-        }) .padding()
+        }) .padding(.horizontal)
             .pickerStyle(.segmented)
     }
 }

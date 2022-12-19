@@ -29,7 +29,7 @@ struct AddItem: View {
                         .background(.regularMaterial)
                         .bold()
                     FieldLabel(text: "Icon")
-                    CashIconPicker(selected: $icon, color: color)
+                    IconPicker(selected: $icon, color: color)
                     FieldLabel(text: "Name")
                     TextField("Stash o' Cash", text: $name)
                         .padding()
