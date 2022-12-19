@@ -19,10 +19,22 @@ struct Cash: View {
     @State var cashList: [Item] = gatherCash()
     @State var selection: Int = 0
     
+    func saveCashlist() {
+        let array = cashList
+        var output: [CashList] = []
+        if array.isEmpty { CashList.saveToFile([]) } else {
+            for i in array {
+                output.append(CashList(name: i.name, amount: i.amount, icon: i.icon))
+            }
+            CashList.saveToFile(output)
+        }
+    }
+    
     var body: some View {
         ZStack {
             Color("CashColor")
                 .edgesIgnoringSafeArea(.all)
+                .modifier(GlowOverlay())
             ScrollView {
                 StashHeader(text: "Cash", list: cashList, showTotal: $showTotal)
                 ForEach(cashList.indices, id: \.self, content: { index in
@@ -64,6 +76,15 @@ struct Cash: View {
                 }
             })
             .sheet(isPresented: $showSheet.2, onDismiss: {
+                var removed = 0
+                for i in cashList.indices {
+                    if cashList[i - removed].amount == -9.95818 {
+                        withAnimation {
+                            cashList.remove(at: i - removed)
+                        }
+                        removed += 1
+                    }
+                }
                 withAnimation {
                     showSheet = (false, false, false)
                 }
@@ -78,14 +99,7 @@ struct Cash: View {
                 AddItem(showSheet: $showAdd, list: $cashList, color: Color("CashColor"))
             })
             .onChange(of: cashList, perform: { _ in
-                let array = cashList
-                var output: [CashList] = []
-                if array.isEmpty { CashList.saveToFile([]) } else {
-                    for i in array {
-                        output.append(CashList(name: i.name, amount: i.amount, icon: i.icon))
-                    }
-                    CashList.saveToFile(output)
-                }
+                saveCashlist()
             })
         }
     }

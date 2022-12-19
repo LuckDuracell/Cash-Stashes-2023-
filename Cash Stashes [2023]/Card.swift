@@ -64,6 +64,11 @@ struct Card: View {
                 }
             })
             .sheet(isPresented: $showSheet.2, onDismiss: {
+                for i in cardList.indices {
+                    withAnimation {
+                        if cardList[i].amount == -9.95818 { cardList.remove(at: i) }
+                    }
+                }
                 withAnimation {
                     showSheet = (false, false, false)
                 }

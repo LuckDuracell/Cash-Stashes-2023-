@@ -28,6 +28,8 @@ struct AddItem: View {
                         .frame(width: size.width, height: 50)
                         .background(.regularMaterial)
                         .bold()
+                    FieldLabel(text: "Icon")
+                    CashIconPicker(selected: $icon, color: color)
                     FieldLabel(text: "Name")
                     TextField("Stash o' Cash", text: $name)
                         .padding()

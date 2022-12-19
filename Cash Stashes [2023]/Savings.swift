@@ -64,6 +64,11 @@ struct Savings: View {
                 }
             })
             .sheet(isPresented: $showSheet.2, onDismiss: {
+                for i in savingsList.indices {
+                    withAnimation {
+                        if savingsList[i].amount == -9.95818 { savingsList.remove(at: i) }
+                    }
+                }
                 withAnimation {
                     showSheet = (false, false, false)
                 }

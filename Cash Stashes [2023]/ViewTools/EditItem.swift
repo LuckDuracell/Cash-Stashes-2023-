@@ -24,6 +24,8 @@ struct EditItem: View {
                         .frame(width: size.width, height: 50)
                         .background(.regularMaterial)
                         .bold()
+                    FieldLabel(text: "Icon")
+                    CashIconPicker(selected: $item.icon, color: color)
                     FieldLabel(text: "Name")
                     TextField("Stash o' Cash", text: $item.name)
                         .padding()
@@ -39,6 +41,13 @@ struct EditItem: View {
                         .padding(.horizontal)
                         .keyboardType(.decimalPad)
                         .focused($showKeyboard)
+                    Button {
+                        item.amount = -9.95818
+                        showSheet = (false, false, false)
+                    } label: {
+                        Text("Delete")
+                            .foregroundColor(.red)
+                    }
                 } .toolbar(content: {
                     ToolbarItem(placement: .keyboard, content: {
                         HStack {

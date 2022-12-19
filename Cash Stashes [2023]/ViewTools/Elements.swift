@@ -125,3 +125,31 @@ struct Item: Hashable {
     var amount: Double
     var icon: String
 }
+
+struct GlowOverlay: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .overlay (
+                LinearGradient(colors: [.white.opacity(0.5), .clear], startPoint: .leading, endPoint: .trailing)
+            )
+    }
+}
+
+struct CashIconPicker: View {
+    
+    @Binding var selected: String
+    let icons = ["dollarsign.circle.fill", "creditcard.circle.fill", "bitcoinsign.circle.fill", "chart.pie.fill", "centsign.circle.fill"]
+    let color: Color
+    
+    var body: some View {
+        Picker("", selection: $selected, content: {
+            ForEach(icons, id: \.self, content: { icon in
+                Image(systemName: icon)
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .foregroundColor(color)
+            })
+        }) .padding()
+            .pickerStyle(.segmented)
+    }
+}
