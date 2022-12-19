@@ -9,16 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
             TabView {
                 Cash()
-                    .background(Color("CashColor"))
                 Card()
-                    .background(Color("CardColor"))
-                Stock()
-                    .background(Color("StockColor"))
+                Savings()
             } .tabViewStyle(.page)
-        } .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 

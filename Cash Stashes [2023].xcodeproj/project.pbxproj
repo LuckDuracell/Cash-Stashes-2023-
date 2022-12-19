@@ -16,7 +16,11 @@
 		0A281B052947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B042947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift */; };
 		0A281B122947B284004A8D88 /* Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B112947B284004A8D88 /* Cash.swift */; };
 		0A281B142947B28D004A8D88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B132947B28D004A8D88 /* Card.swift */; };
-		0A281B162947B295004A8D88 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B152947B295004A8D88 /* Stock.swift */; };
+		0A281B162947B295004A8D88 /* Savings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A281B152947B295004A8D88 /* Savings.swift */; };
+		0AA6A3102950104900FB80C9 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA6A30F2950104900FB80C9 /* Elements.swift */; };
+		0AA6A3132950115100FB80C9 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA6A3122950115100FB80C9 /* EditItem.swift */; };
+		0AA6A3172950341000FB80C9 /* AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA6A3162950341000FB80C9 /* AddItem.swift */; };
+		0AA6A31929503A2400FB80C9 /* PersistanceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA6A31829503A2400FB80C9 /* PersistanceData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +53,11 @@
 		0A281B042947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash_Stashes__2023_UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A281B112947B284004A8D88 /* Cash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cash.swift; sourceTree = "<group>"; };
 		0A281B132947B28D004A8D88 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		0A281B152947B295004A8D88 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		0A281B152947B295004A8D88 /* Savings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savings.swift; sourceTree = "<group>"; };
+		0AA6A30F2950104900FB80C9 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		0AA6A3122950115100FB80C9 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
+		0AA6A3162950341000FB80C9 /* AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItem.swift; sourceTree = "<group>"; };
+		0AA6A31829503A2400FB80C9 /* PersistanceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +112,10 @@
 				0A281AE92947B258004A8D88 /* ContentView.swift */,
 				0A281B112947B284004A8D88 /* Cash.swift */,
 				0A281B132947B28D004A8D88 /* Card.swift */,
-				0A281B152947B295004A8D88 /* Stock.swift */,
+				0A281B152947B295004A8D88 /* Savings.swift */,
+				0AA6A3112950113D00FB80C9 /* ViewTools */,
 				0A281AEB2947B25B004A8D88 /* Assets.xcassets */,
+				0AA6A31829503A2400FB80C9 /* PersistanceData.swift */,
 				0A281AED2947B25B004A8D88 /* Preview Content */,
 			);
 			path = "Cash Stashes [2023]";
@@ -134,6 +144,16 @@
 				0A281B042947B25C004A8D88 /* Cash_Stashes__2023_UITestsLaunchTests.swift */,
 			);
 			path = "Cash Stashes [2023]UITests";
+			sourceTree = "<group>";
+		};
+		0AA6A3112950113D00FB80C9 /* ViewTools */ = {
+			isa = PBXGroup;
+			children = (
+				0AA6A30F2950104900FB80C9 /* Elements.swift */,
+				0AA6A3122950115100FB80C9 /* EditItem.swift */,
+				0AA6A3162950341000FB80C9 /* AddItem.swift */,
+			);
+			path = ViewTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA6A3172950341000FB80C9 /* AddItem.swift in Sources */,
 				0A281AEA2947B258004A8D88 /* ContentView.swift in Sources */,
 				0A281B122947B284004A8D88 /* Cash.swift in Sources */,
+				0AA6A31929503A2400FB80C9 /* PersistanceData.swift in Sources */,
+				0AA6A3102950104900FB80C9 /* Elements.swift in Sources */,
 				0A281AE82947B258004A8D88 /* Cash_Stashes__2023_App.swift in Sources */,
-				0A281B162947B295004A8D88 /* Stock.swift in Sources */,
+				0AA6A3132950115100FB80C9 /* EditItem.swift in Sources */,
+				0A281B162947B295004A8D88 /* Savings.swift in Sources */,
 				0A281B142947B28D004A8D88 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

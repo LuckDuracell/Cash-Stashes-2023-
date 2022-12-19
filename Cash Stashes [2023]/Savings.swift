@@ -1,5 +1,5 @@
 //
-//  Card.swift
+//  Savings.swift
 //  Cash Stashes [2023]
 //
 //  Created by Luke Drushell on 12/12/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Card: View {
+struct Savings: View {
     
     // showSheet.0 = animation p1, showSheet.1 = animation p2, showSheet.2 = action
     @State var showSheet: (Bool, Bool, Bool) = (false, false, false)
@@ -16,21 +16,21 @@ struct Card: View {
     // showAdd.0 = animation p1, showAdd.1 = animation p2, showAdd.2 = action
     @State var showAdd: (Bool, Bool, Bool) = (false, false, false)
     
-    @State var cardList: [Item] = gatherCards()
+    @State var savingsList: [Item] = gatherSavings()
     @State var selection: Int = 0
     
     var body: some View {
         ZStack {
-            Color("CardColor")
+            Color("SavingsColor")
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
-                StashHeader(text: "Card", list: cardList, showTotal: $showTotal)
-                ForEach(cardList.indices, id: \.self, content: { index in
-                    let item = cardList[index]
+                StashHeader(text: "Savings", list: savingsList, showTotal: $showTotal)
+                ForEach(savingsList.indices, id: \.self, content: { index in
+                    let item = savingsList[index]
                     HStack {
                         Image(systemName: item.icon)
                             .resizable()
-                            .foregroundColor(Color("CardColor"))
+                            .foregroundColor(Color("SavingsColor"))
                             .frame(width: 25, height: 25)
                             .padding(.vertical, -5)
                         Text(item.name)
@@ -68,31 +68,31 @@ struct Card: View {
                     showSheet = (false, false, false)
                 }
             }, content: {
-                EditItem(showSheet: $showSheet, item: $cardList[selection], color: Color("CardColor"))
+                EditItem(showSheet: $showSheet, item: $savingsList[selection], color: Color("SavingsColor"))
             })
             .sheet(isPresented: $showAdd.2, onDismiss: {
                 withAnimation {
                     showAdd = (false, false, false)
                 }
             }, content: {
-                AddItem(showSheet: $showAdd, list: $cardList, color: Color("CardColor"))
+                AddItem(showSheet: $showAdd, list: $savingsList, color: Color("SavingsColor"))
             })
-            .onChange(of: cardList, perform: { _ in
-                let array = cardList
-                var output: [CardList] = []
-                if array.isEmpty { CardList.saveToFile([]) } else {
+            .onChange(of: savingsList, perform: { _ in
+                let array = savingsList
+                var output: [SavingsList] = []
+                if array.isEmpty { SavingsList.saveToFile([]) } else {
                     for i in array {
-                        output.append(CardList(name: i.name, amount: i.amount, icon: i.icon))
+                        output.append(SavingsList(name: i.name, amount: i.amount, icon: i.icon))
                     }
-                    CardList.saveToFile(output)
+                    SavingsList.saveToFile(output)
                 }
             })
         }
     }
 }
 
-struct Card_Previews: PreviewProvider {
+struct Savings_Previews: PreviewProvider {
     static var previews: some View {
-        Card()
+        Savings()
     }
 }
